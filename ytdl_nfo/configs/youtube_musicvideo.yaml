@@ -1,0 +1,49 @@
+musicvideo:
+  - title: '{title}'
+  - artist: '{uploader}'
+  - plot: '{description}'
+  - genre!: '{tags}'
+  - studio: '{uploader}'
+  - year:
+      convert: 'date'
+      input_f: '%Y%m%d'
+      output_f: '%Y'
+      value: '{upload_date}'
+  - runtime: '{duration}'
+  - ratings>rating>value:
+      parent_attr:
+        name: 'default'
+        max: '10'
+        default: 'true'
+      value: '{rating}'
+  - ratings>rating>votes: '{like_count}'
+  - userrating: '{userrating}'
+  - thumb: '{thumbnail}'
+  - thumb:
+      attr:
+        aspect: 'poster'
+      value: '{thumbnail}'
+  - thumb:
+      attr:
+        aspect: 'thumb'
+      value: '{thumbnail}'
+  - thumb:
+      attr:
+        aspect: 'clearlogo'
+      value: '{clearlogo}'
+  - thumb:
+      attr:
+        aspect: 'logo'
+      value: '{clearlogo}'
+  - thumb:
+      attr:
+        aspect: 'banner'
+      value: '{banner}'
+  - thumb:
+      attr:
+        aspect: 'artist'
+      value: '{artist_thumb}'
+  - fanart>thumb: '{fanart}'
+  - fileinfo>streamdetails>audio>language: '{audio_language}'
+  - fileinfo>streamdetails>video>durationinseconds: '{duration}'
+  - track: '{id}'

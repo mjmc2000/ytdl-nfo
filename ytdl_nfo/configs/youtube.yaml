@@ -1,6 +1,7 @@
 episodedetails:
   - title: '{title}'
   - showtitle: '{uploader}'
+  - studio: '{uploader}'
   - uniqueid:
       attr:
         type: 'youtube'
@@ -12,3 +13,25 @@ episodedetails:
       input_f: '%Y%m%d'
       output_f: '%Y-%m-%d'
       value: '{upload_date}'
+  - runtime: '{duration}'
+  - ratings>rating>value:
+      parent_attr:
+        name: 'default'
+        max: '10'
+        default: 'true'
+      value: '{rating}'
+  - ratings>rating>votes: '{like_count}'
+  - userrating: '{userrating}'
+  - thumb: '{thumbnail}'
+  - thumb:
+      attr:
+        aspect: 'poster'
+      value: '{thumbnail}'
+  - thumb:
+      attr:
+        aspect: 'thumb'
+      value: '{thumbnail}'
+  - fileinfo>streamdetails>audio>language: '{audio_language}'
+  - fileinfo>streamdetails>video>durationinseconds: '{duration}'
+  - genre!: '{categories}'
+  - tag!: '{tags}'
